@@ -178,7 +178,10 @@ const DashboardIndex = () => {
           <div className="grid grid-cols-2 gap-[12px] w-full">
             <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
               <div className="w-full">
-                <img src="image/card1.png" alt="card image" />
+                <img
+                  src="https://i.ibb.co.com/wZkxqhm6/card1.png"
+                  alt="card image"
+                />
                 <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
                   OPEN DINING ORDERS
                 </p>
@@ -196,7 +199,10 @@ const DashboardIndex = () => {
             </div>
             <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
               <div className="w-full">
-                <img src="image/card2.png" alt="card image" />
+                <img
+                  src="https://i.ibb.co.com/0RQ3zQ6m/card2.png"
+                  alt="card image"
+                />
                 <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
                   OPEN LAUNDRY ORDERS
                 </p>
@@ -214,7 +220,10 @@ const DashboardIndex = () => {
             </div>
             <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
               <div className="w-full">
-                <img src="image/card3.png" alt="card image" />
+                <img
+                  src="https://i.ibb.co.com/ds9rFX2X/card3.png"
+                  alt="card image"
+                />
                 <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
                   OPEN SERVICE REQUEST
                 </p>
@@ -232,7 +241,10 @@ const DashboardIndex = () => {
             </div>
             <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
               <div className="w-full">
-                <img src="image/card4.png" alt="card image" />
+                <img
+                  src="https://i.ibb.co.com/DN7Jg8R/card4.png"
+                  alt="card image"
+                />
                 <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
                   AVAILABLE ROOMS
                 </p>
