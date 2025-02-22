@@ -178,10 +178,7 @@ const DashboardIndex = () => {
           <div className="grid grid-cols-2 gap-[12px] w-full">
             <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
               <div className="w-full">
-                <img
-                  src="image/fluent-emoji-high-contrast_man-in-tuxedo.svg"
-                  alt="card image"
-                />
+                <img src="image/card1.png" alt="card image" />
                 <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
                   OPEN DINING ORDERS
                 </p>
@@ -199,7 +196,7 @@ const DashboardIndex = () => {
             </div>
             <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
               <div className="w-full">
-                <img src="image/avatar-sm2.svg" alt="card image" />
+                <img src="image/card2.png" alt="card image" />
                 <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
                   OPEN LAUNDRY ORDERS
                 </p>
@@ -217,7 +214,7 @@ const DashboardIndex = () => {
             </div>
             <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
               <div className="w-full">
-                <img src="image/avatar-sm3.svg" alt="card image" />
+                <img src="image/card3.png" alt="card image" />
                 <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
                   OPEN SERVICE REQUEST
                 </p>
@@ -235,7 +232,7 @@ const DashboardIndex = () => {
             </div>
             <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
               <div className="w-full">
-                <img src="image/avatar-sm4.svg" alt="card image" />
+                <img src="image/card4.png" alt="card image" />
                 <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
                   AVAILABLE ROOMS
                 </p>
