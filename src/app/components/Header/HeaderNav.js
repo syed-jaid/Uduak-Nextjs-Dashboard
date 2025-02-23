@@ -1,6 +1,3 @@
-"use client";
-
-import React, { useState } from "react";
 import NavLinks from "./NavLinks";
 
 const HeaderNav = ({ DarkMode }) => {
@@ -66,14 +63,18 @@ const HeaderNav = ({ DarkMode }) => {
     },
   ];
   return (
-    <div>
+    <div className="hidden sm:block">
       <div
         className={`${
           DarkMode ? "bg-[#1D1D3F]" : "bg-white"
         }  py-[16px] flex justify-center items-center`}
       >
         <div className="w-full px-[20px]">
-          <div className="max-w-[1142px] w-[100%] mx-auto border border-1 border-[#D6D6D6] md:rounded-full rounded-[14px] px-[19px] py-[15px] flex justify-center items-center gap-[16px] flex-wrap">
+          <div
+            className={`max-w-[1142px] w-[100%] mx-auto border border-1 ${
+              DarkMode ? "border-[#474788]" : "border-[#D6D6D6]"
+            }  md:rounded-full rounded-[14px] px-[19px] py-[15px] flex justify-center items-center gap-[16px] flex-wrap`}
+          >
             {/* -------- */}
             <div className="flex justify-between items-center cursor-pointer">
               <img src="Image/Dashboards.svg" alt=" card image" />
@@ -83,7 +84,7 @@ const HeaderNav = ({ DarkMode }) => {
             </div>
             {/* -------- */}
             {menuItems.map((item, index) => (
-              <NavLinks key={index} item={item} />
+              <NavLinks key={index} item={item} DarkMode={DarkMode} />
             ))}
             {/* -------- */}
           </div>

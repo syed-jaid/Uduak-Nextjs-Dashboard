@@ -1,17 +1,15 @@
-"use client";
-
-import React, { useState } from "react";
 import CalendarIndex from "./Calendar/CalendarIndex";
 import TopCardsPopup from "./cards/TopcardsPopup";
+import BottomCard from "./cards/BottomCard";
 
-const DashboardIndex = () => {
+const DashboardIndex = ({ DarkMode }) => {
   const cardData = [
     {
       title: "TOTAL EARNINGS",
       value: "$28K",
       percentage: "+16.24%",
       icon: "image/green-arrow.svg",
-      color: "#23D976",
+      color: "#04D362",
       dropdownOptions: ["Add payment", "All payments"],
       iconBgColor: "#45B1E1",
       iconSrc: "Image/Icon(1).svg",
@@ -31,7 +29,7 @@ const DashboardIndex = () => {
       value: "3,302",
       percentage: "+29.08%",
       icon: "image/green-arrow.svg",
-      color: "#23D976",
+      color: "#04D362",
       dropdownOptions: ["Open orders", "View all"],
       iconBgColor: "#FF7272",
       iconSrc: "Image/Icon(3).svg",
@@ -41,10 +39,45 @@ const DashboardIndex = () => {
       value: "$101K",
       percentage: "+29.08%",
       icon: "image/green-arrow.svg",
-      color: "#23D976",
+      color: "#04D362",
       dropdownOptions: ["Withdraw", "View"],
       iconBgColor: "#D86ECC",
       iconSrc: "Image/Icon.svg",
+    },
+  ];
+
+  const cardsData = [
+    {
+      image: "Image/card-e.svg",
+      title: "OPEN DINING ORDERS",
+      count: 12,
+      borderColor: "border-[#EDEDED]",
+      textColor: "text-[#F10A4B]",
+      subText: "120 \n Mins",
+    },
+    {
+      image: "Image/card-a.svg",
+      title: "OPEN LAUNDRY ORDERS",
+      count: 12,
+      borderColor: "border-[#389307]",
+      textColor: "text-[#389307]",
+      subText: "120 \n Mins",
+    },
+    {
+      image: "Image/card-b.svg",
+      title: "OPEN SERVICE REQUEST",
+      count: 12,
+      borderColor: "border-[#389307]",
+      textColor: "text-[#389307]",
+      subText: "32 \n Mins",
+    },
+    {
+      image: "Image/card-c.svg",
+      title: "AVAILABLE ROOMS",
+      count: 12,
+      borderColor: "border-[#389307]",
+      textColor: "text-[#389307]",
+      subText: "10/10 \n 100%",
     },
   ];
 
@@ -61,12 +94,22 @@ const DashboardIndex = () => {
             </p>
           </div>
           <div className="flex justify-center items-center">
-            <div className="bg-white h-[40px] w-[214px] flex justify-center items-center rounded-l-[8px]">
-              <p className="text-[12px] font-medium">
+            <div
+              className={`h-[40px] w-[214px] sm:flex justify-center items-center rounded-l-[8px] hidden ${
+                DarkMode
+                  ? "bg-[#111131] border border-1 border-[#262648]"
+                  : "bg-white"
+              }`}
+            >
+              <p
+                className={`text-[12px] font-medium ${
+                  DarkMode && "text-white"
+                }`}
+              >
                 01 Jan, 2024 to 31 Jan, 2024
               </p>
             </div>
-            <div className="bg-[#D961AB] h-[41px] w-[35px] flex justify-center items-center rounded-r-[8px]">
+            <div className="bg-[#D961AB] h-[38px] w-[35px] flex justify-center items-center rounded-l-[8px] sm:rounded-l-[0] rounded-r-[8px]">
               <img src="image/calender.svg" alt="card image" />
             </div>
           </div>
@@ -74,104 +117,19 @@ const DashboardIndex = () => {
         {/* 4 in line  */}
         <div className="flex items-center justify-between gap-[12px] overflow-x-auto pb-[16px]">
           {cardData.map((card, index) => (
-            <TopCardsPopup key={index} card={card} />
+            <TopCardsPopup key={index} card={card} DarkMode={DarkMode} />
           ))}
         </div>
 
-        <div className="flex items-center w-full gap-[12px] mt-[8px]">
+        <div className="block lg:flex items-center w-full gap-[12px] mt-[8px]">
           {/* 2 by 2  */}
-          <div className="grid grid-cols-2 gap-[12px] w-full">
-            <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
-              <div className="w-full">
-                <img
-                  // src="https://i.ibb.co.com/wZkxqhm6/card1.png"
-                  src="Image/card-e.svg"
-                  alt="card image"
-                />
-                <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
-                  OPEN DINING ORDERS
-                </p>
-                <div className="flex items-center justify-between">
-                  <h2 className="text-[40px] text-[#002060] leading-[40px] font-bold">
-                    12
-                  </h2>
-                  <div className="border border-1 border-[#EDEDED] w-[56px] h-[50px] rounded-[4px] flex items-center justify-center">
-                    <p className="text-[12px] text-[#F10A4B] text-center my-0">
-                      120 <br /> Mins
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
-              <div className="w-full">
-                <img
-                  // src="https://i.ibb.co.com/0RQ3zQ6m/card2.png"
-                  src="Image/card-a.svg"
-                  alt="card image"
-                />
-                <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
-                  OPEN LAUNDRY ORDERS
-                </p>
-                <div className="flex items-center justify-between">
-                  <h2 className="text-[40px] text-[#002060] leading-[40px] font-bold">
-                    12
-                  </h2>
-                  <div className="border border-1 border-[#389307] w-[56px] h-[50px] rounded-[4px] flex items-center justify-center">
-                    <p className="text-[12px] text-[#389307] text-center my-0">
-                      120 <br /> Mins
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
-              <div className="w-full">
-                <img
-                  // src="https://i.ibb.co.com/ds9rFX2X/card3.png"
-                  src="Image/card-b.svg"
-                  alt="card image"
-                />
-                <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
-                  OPEN SERVICE REQUEST
-                </p>
-                <div className="flex items-center justify-between">
-                  <h2 className="text-[40px] text-[#002060] leading-[40px] font-bold">
-                    12
-                  </h2>
-                  <div className="border border-1 border-[#389307] w-[56px] h-[50px] rounded-[4px] flex items-center justify-center">
-                    <p className="text-[12px] text-[#389307] text-center my-0">
-                      32 <br /> Mins
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
-              <div className="w-full">
-                <img
-                  // src="https://i.ibb.co.com/DN7Jg8R/card4.png"
-                  src="Image/card-c.svg"
-                  alt="card image"
-                />
-                <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
-                  AVAILABLE ROOMS
-                </p>
-                <div className="flex items-center justify-between">
-                  <h2 className="text-[40px] text-[#002060] leading-[40px] font-bold">
-                    12
-                  </h2>
-                  <div className="border border-1 border-[#389307] w-[56px] h-[50px] rounded-[4px] flex items-center justify-center">
-                    <p className="text-[12px] text-[#389307] text-center my-0">
-                      10/10 <br /> 100%
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="lg:grid grid-cols-2 gap-[12px] w-full flex items-center justify-between overflow-x-auto pb-[16px] lg:pb-[0px]">
+            {cardsData.map((card, index) => (
+              <BottomCard key={index} {...card} DarkMode={DarkMode} />
+            ))}
           </div>
 
-          <CalendarIndex />
+          <CalendarIndex {...{ DarkMode }} />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const CalendarIndex = () => {
+const CalendarIndex = ({ DarkMode }) => {
   const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
@@ -38,18 +38,32 @@ const CalendarIndex = () => {
   const days = generateCalendar();
   return (
     <div className="w-full h-full">
-      <div className="w-full h-full mx-auto bg-white rounded-[12px] shadow-md px-[30px] pb-[30px] pt-[26px]">
+      <div
+        className={`${
+          DarkMode ? "bg-[#1d1d3f]" : "bg-white"
+        }  w-full h-full mx-auto rounded-[12px] shadow-md px-[30px] pb-[30px] pt-[26px]`}
+      >
         <div className="flex justify-between items-center">
-          <p className="text-[22px] text-[#002060] font-bold">ROOM OCCUPANCY</p>
+          <p
+            className={`${
+              DarkMode ? "text-white" : "text-[#002060]"
+            } sm:text-[22px] text-[13px] font-bold`}
+          >
+            ROOM OCCUPANCY
+          </p>
           <div className="flex gap-[9px]">
-            <div className="relative w-[70px]">
+            <div className="relative sm:w-[70px] w-[60px]">
               <select
                 value={currentMonth}
                 onChange={(e) => setCurrentMonth(Number(e.target.value))}
-                className="text-[12px] bg-white border border-1 border-[#e9e9ed] px-[16px] py-[6px] rounded-[25px] appearance-none w-full "
+                className={`${
+                  DarkMode
+                    ? "bg-[#1D1D3F] text-white border-[#6f6f7d]"
+                    : "bg-white border-[#e9e9ed]"
+                } sm:text-[12px] text-[8px] border border-1 px-[16px] py-[6px] rounded-[25px] appearance-none w-full`}
               >
                 {months.map((month, index) => (
-                  <option className="text-[12px]" key={index} value={index}>
+                  <option className="text-[12px] " key={index} value={index}>
                     {month.slice(0, 3)}
                   </option>
                 ))}
@@ -58,11 +72,15 @@ const CalendarIndex = () => {
                 <img src="Image/DArow.svg" alt="" />
               </span>
             </div>
-            <div className="relative w-[76px]">
+            <div className="relative sm:w-[76px] w-[66px]">
               <select
                 value={currentYear}
                 onChange={(e) => setCurrentYear(Number(e.target.value))}
-                className="text-[12px] bg-white border border-1 border-[#e9e9ed] px-[16px] py-[6px] rounded-[25px] appearance-none w-full"
+                className={`${
+                  DarkMode
+                    ? "bg-[#1D1D3F] text-white border-[#6f6f7d]"
+                    : "bg-white border-[#e9e9ed]"
+                } sm:text-[12px] text-[8px] border border-1 px-[16px] py-[6px] rounded-[25px] appearance-none w-full`}
               >
                 {years.map((year) => (
                   <option className="text-[12px]" key={year} value={year}>
@@ -77,47 +95,68 @@ const CalendarIndex = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-[20px] my-[20px]">
+        <div
+          className={`${
+            DarkMode ? "text-[#787878]" : "text-[#1E1E1E]"
+          } flex items-center justify-center gap-[20px] my-[20px]`}
+        >
           <div className="flex items-center gap-[8px]">
-            <div className="w-[11px] h-[11px] bg-[#F9E6F2] rounded-full border border-1 border-[#DE0707]" />
-            <p className="text-[#1E1E1E] text-[11px]">1% - 40%</p>
+            <div className="sm:w-[11px] sm:h-[11px] w-[7px] h-[7px] bg-[#F9E6F2] rounded-full border border-1 border-[#DE0707]" />
+            <p className="text-[7px] sm:text-[11px]">1% - 40%</p>
           </div>
           <div className="flex items-center gap-[8px]">
-            <div className="w-[11px] h-[11px] bg-[#EBEF05] rounded-full border border-1 border-[#BDC007]" />
-            <p className="text-[#1E1E1E] text-[11px]">41% - 80%</p>
+            <div className="sm:w-[11px] sm:h-[11px] w-[7px] h-[7px] bg-[#EBEF05] rounded-full border border-1 border-[#BDC007]" />
+            <p className="text-[7px] sm:text-[11px]">41% - 80%</p>
           </div>
           <div className="flex items-center gap-[8px]">
-            <div className="w-[11px] h-[11px] bg-[#d3fad5] rounded-full border border-1 border-[#19DC24]" />
-            <p className="text-[#1E1E1E] text-[11px]">81% - 100%</p>
+            <div className="sm:w-[11px] sm:h-[11px] w-[7px] h-[7px] bg-[#d3fad5] rounded-full border border-1 border-[#19DC24]" />
+            <p className="text-[7px] sm:text-[11px]">81% - 100%</p>
           </div>
         </div>
 
         <div className="grid grid-cols-7 gap-[20px] text-center mt-[20px]">
           {daysOfWeek.map((day) => (
-            <div key={day} className="text-[14px] font-medium">
+            <div
+              key={day}
+              className={`${
+                DarkMode && "text-white"
+              } sm:text-[14px] text-[9px] font-medium`}
+            >
               {day}
             </div>
           ))}
           {days.map((dayObj, index) => (
             <div
               key={index}
-              className={`py-2 w-[30px] h-[31px] mx-auto rounded-full text-[14px] font-medium flex items-center justify-center 
+              className={`py-2 sm:w-[30px] sm:h-[31px] w-[20px] h-[20px] mx-auto rounded-full sm:text-[14px] text-[9px] font-medium flex items-center justify-center 
                 ${
                   dayObj.day === 1 &&
                   dayObj.currentMonth &&
-                  " bg-[#f6d9d9] border border-1 border-[#DE0707] "
+                  `${
+                    DarkMode ? "bg-[#4a2d47]" : "bg-[#f6d9d9]"
+                  } border border-1 border-[#DE0707]`
                 }
                 ${
                   dayObj.day === 2 &&
                   dayObj.currentMonth &&
-                  " bg-[#fafbc1] border border-1 border-[#BDC007] "
+                  ` ${
+                    DarkMode ? "bg-[#515231]" : "bg-[#d6f9c3]"
+                  } bg-[#fafbc1] border border-1 border-[#BDC007]`
                 }
                 ${
                   dayObj.day === 24 &&
                   dayObj.currentMonth &&
-                  " bg-[#d6f9c3] border border-1 border-[#0ADA15]] "
+                  ` ${
+                    DarkMode ? "bg-[#2b4e32]" : "bg-[#d6f9c3]"
+                  } border border-1 border-[#0ADA15]`
                 }
-               ${dayObj.currentMonth ? "text-black" : "text-[#C5C2C2]"}`}
+               ${
+                 dayObj.currentMonth
+                   ? DarkMode
+                     ? "text-white"
+                     : "text-black"
+                   : "text-[#C5C2C2]"
+               }`}
             >
               {dayObj.day}
             </div>
