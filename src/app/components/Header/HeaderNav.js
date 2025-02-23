@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import NavLinks from "./NavLinks";
 
-const HeaderNav = () => {
+const HeaderNav = ({ DarkMode }) => {
   const menuItems = [
     {
       id: "reservations",
@@ -67,7 +67,11 @@ const HeaderNav = () => {
   ];
   return (
     <div>
-      <div className="bg-white py-[16px] flex justify-center items-center">
+      <div
+        className={`${
+          DarkMode ? "bg-[#1D1D3F]" : "bg-white"
+        }  py-[16px] flex justify-center items-center`}
+      >
         <div className="w-full px-[20px]">
           <div className="max-w-[1142px] w-[100%] mx-auto border border-1 border-[#D6D6D6] md:rounded-full rounded-[14px] px-[19px] py-[15px] flex justify-center items-center gap-[16px] flex-wrap">
             {/* -------- */}
