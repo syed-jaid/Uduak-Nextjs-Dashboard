@@ -179,7 +179,8 @@ const DashboardIndex = () => {
             <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
               <div className="w-full">
                 <img
-                  src="https://i.ibb.co.com/wZkxqhm6/card1.png"
+                  // src="https://i.ibb.co.com/wZkxqhm6/card1.png"
+                  src="Image/card-e.svg"
                   alt="card image"
                 />
                 <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
