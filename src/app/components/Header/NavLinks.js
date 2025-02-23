@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const NavLinks = ({ item }) => {
+const NavLinks = ({ item, DarkMode }) => {
   const [activeMenu, setActiveMenu] = useState(null);
 
   return (
@@ -19,7 +19,11 @@ const NavLinks = ({ item }) => {
 
       {/* Dropdown Menu */}
       {activeMenu === item.id && item.dropdown && (
-        <div className="flex flex-col gap-[25px] bg-[#FCFCFC] absolute top-[30px] left-1/2 -translate-x-1/2 z-50 py-[27px] px-[25px] text-[#9599AD] text-[13px] rounded-[7px] drop-shadow-md">
+        <div
+          className={`${
+            DarkMode ? "bg-[#1D1D3F]" : "bg-[#FCFCFC]"
+          } flex flex-col gap-[25px] absolute top-[20px] left-1/2 -translate-x-1/2 z-50 py-[27px] px-[25px] text-[#9599AD] text-[13px] rounded-[7px] drop-shadow-md`}
+        >
           {item.dropdown.map((option, index) => (
             <p key={index} className="text-nowrap cursor-pointer">
               {option}

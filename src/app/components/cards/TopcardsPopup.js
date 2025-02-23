@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
-const TopCardsPopup = ({ card }) => {
+const TopCardsPopup = ({ card, DarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null); // Reference for dropdown
 
@@ -20,9 +20,9 @@ const TopCardsPopup = ({ card }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen]);
-
+  console.log(card);
   return (
-    <div className="bg-white rounded-[12px] p-[16px] w-full min-w-[274px] min-h-[177px] relative shadow-md">
+    <div className="bg-white rounded-[12px] p-[16px] w-full lg:min-w-[274px] min-w-[339px] min-h-[177px] relative shadow-md">
       <img
         className="absolute top-0 left-0 z-0 rounded-tl-[12px]"
         src="Image/RectangleTop.svg"
@@ -46,7 +46,11 @@ const TopCardsPopup = ({ card }) => {
               onClick={() => setIsOpen(!isOpen)}
             />
             {isOpen && (
-              <div className="flex flex-col gap-[25px] bg-[#FCFCFC] absolute right-[7px] z-50 top-[19px] py-[27px] px-[25px] text-[#9599AD] text-[13px] rounded-[7px] shadow-lg">
+              <div
+                className={`${
+                  DarkMode ? "bg-[#1D1D3F]" : "bg-[#FCFCFC]"
+                } flex flex-col gap-[25px] absolute right-[7px] top-[19px]  z-50 py-[27px] px-[25px] text-[#9599AD] text-[13px] rounded-[7px] drop-shadow-md`}
+              >
                 {card.dropdownOptions.map((option, i) => (
                   <p key={i} className="text-nowrap">
                     {option}
@@ -60,9 +64,14 @@ const TopCardsPopup = ({ card }) => {
           {card.value}
         </h1>
         <div className="flex justify-between items-end w-full">
-          <p className={`text-[11px] ${card.color}`}>
-            {card.percentage}
+          <p
+            className={`text-[11px] ${
+              card.title === "BOOKINGS" ? "text-[#F10A4B]" : "text-[#04D362]"
+            } ${card.title === "WALLET" && "underline underline-offset-2"}`}
+          >
+            {!(card.title === "WALLET") && card.percentage}
             <img className="inline" src={card.icon} alt="card image" />
+            {card.title === "WALLET" && card.percentage}
           </p>
           <div
             className="z-10 w-[33px] h-[32px] rounded-[5px] flex items-center justify-center"
