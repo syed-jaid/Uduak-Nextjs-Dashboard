@@ -15,7 +15,7 @@ const page = () => {
     <div className={inter.className}>
       <HeaderIndex {...{ DarkMode, setDarkMode }} />
       <HeaderNav {...{ DarkMode }} />
-      <SaidMenu />
+      {/* <SaidMenu /> */}
       <DashboardIndex />
       <Footer />
     </div>
