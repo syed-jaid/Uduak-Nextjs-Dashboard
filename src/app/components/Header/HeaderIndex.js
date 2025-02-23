@@ -15,7 +15,7 @@ const HeaderIndex = () => {
             <h1 className="mx-[9px] text-white text-[16px] font-medium">
               Uduak
             </h1>
-            <img src="Image/downArow.svg" alt="" />
+            <img src="Image/uduak-down-arraw.svg" alt="" />
           </div>
         </div>
       </div>

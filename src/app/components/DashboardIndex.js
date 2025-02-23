@@ -21,7 +21,7 @@ const DashboardIndex = () => {
               </p>
             </div>
             <div className="bg-[#D961AB] h-[41px] w-[35px] flex justify-center items-center rounded-r-[8px]">
-              <img src="image/cal-img.svg" alt="card image" />
+              <img src="image/calender.svg" alt="card image" />
             </div>
           </div>
         </div>
@@ -201,7 +201,8 @@ const DashboardIndex = () => {
             <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
               <div className="w-full">
                 <img
-                  src="https://i.ibb.co.com/0RQ3zQ6m/card2.png"
+                  // src="https://i.ibb.co.com/0RQ3zQ6m/card2.png"
+                  src="Image/card-a.svg"
                   alt="card image"
                 />
                 <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
@@ -222,7 +223,8 @@ const DashboardIndex = () => {
             <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
               <div className="w-full">
                 <img
-                  src="https://i.ibb.co.com/ds9rFX2X/card3.png"
+                  // src="https://i.ibb.co.com/ds9rFX2X/card3.png"
+                  src="Image/card-b.svg"
                   alt="card image"
                 />
                 <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
@@ -243,7 +245,8 @@ const DashboardIndex = () => {
             <div className="bg-white rounded-[12px] px-[30px] w-full max-w-[276px] min-h-[230px] flex items-center shadow-md">
               <div className="w-full">
                 <img
-                  src="https://i.ibb.co.com/DN7Jg8R/card4.png"
+                  // src="https://i.ibb.co.com/DN7Jg8R/card4.png"
+                  src="Image/card-c.svg"
                   alt="card image"
                 />
                 <p className="text-[#545454] text-[12px] font-medium mt-[20px] mb-[30px]">
