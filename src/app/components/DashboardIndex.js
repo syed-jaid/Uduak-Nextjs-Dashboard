@@ -1,7 +1,53 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import CalendarIndex from "./Calendar/CalendarIndex";
+import TopCardsPopup from "./cards/TopcardsPopup";
 
 const DashboardIndex = () => {
+  const cardData = [
+    {
+      title: "TOTAL EARNINGS",
+      value: "$28K",
+      percentage: "+16.24%",
+      icon: "image/green-arrow.svg",
+      color: "#23D976",
+      dropdownOptions: ["Add payment", "All payments"],
+      iconBgColor: "#45B1E1",
+      iconSrc: "Image/Icon(1).svg",
+    },
+    {
+      title: "BOOKINGS",
+      value: "1,283",
+      percentage: "-3.57%",
+      icon: "image/down-arrow.svg",
+      color: "#F10A4B",
+      dropdownOptions: ["Check in", "View all"],
+      iconBgColor: "#5D93FF",
+      iconSrc: "Image/Icon(2).svg",
+    },
+    {
+      title: "Services",
+      value: "3,302",
+      percentage: "+29.08%",
+      icon: "image/green-arrow.svg",
+      color: "#23D976",
+      dropdownOptions: ["Open orders", "View all"],
+      iconBgColor: "#FF7272",
+      iconSrc: "Image/Icon(3).svg",
+    },
+    {
+      title: "WALLET",
+      value: "$101K",
+      percentage: "+29.08%",
+      icon: "image/green-arrow.svg",
+      color: "#23D976",
+      dropdownOptions: ["Withdraw", "View"],
+      iconBgColor: "#D86ECC",
+      iconSrc: "Image/Icon.svg",
+    },
+  ];
+
   return (
     <div className="px-[20px]">
       <div className="max-w-[1142px] mx-auto">
@@ -27,150 +73,9 @@ const DashboardIndex = () => {
         </div>
         {/* 4 in line  */}
         <div className="flex items-center justify-between gap-[12px] overflow-x-auto pb-[16px]">
-          <div className="bg-white rounded-[12px] p-[16px] w-full min-w-[274px] min-h-[177px] relative shadow-md">
-            <img
-              className="absolute top-0 left-0 z-0 rounded-tl-[12px]"
-              src="Image/RectangleTop.svg"
-              alt="card image"
-            />
-            <img
-              className="absolute bottom-0 right-0 z-0 rounded-br-[12px]"
-              src="Image/RectangleBot.png"
-              alt="card image"
-            />
-            <div className="w-full">
-              <div className="flex justify-between mb-[56px]">
-                <p className="text-[13px] text-[#545454] font-medium z-10">
-                  TOTAL EARNINGS
-                </p>
-                <img src="Image/charm_menu-kebab.svg" alt="card image" />
-              </div>
-              <h1 className="text-[#002060] text-[40px] leading-[45px] font-bold">
-                $28K
-              </h1>
-              <div className="flex justify-between items-end w-full">
-                <p className=" text-[#23D976] text-[11px]">
-                  +16.24%
-                  <img
-                    className="inline"
-                    src="image/green-arrow.svg"
-                    alt="card image"
-                  />
-                </p>
-                <div className="bg-[#45B1E1] z-10 w-[33px] h-[32px] rounded-[5px] flex items-center justify-center">
-                  <img src="Image/Icon(1).svg" alt="card image" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white rounded-[12px] p-[16px] w-full min-w-[274px] min-h-[177px] relative shadow-md">
-            <img
-              className="absolute top-0 left-0 z-0 rounded-tl-[12px]"
-              src="Image/RectangleTop.svg"
-              alt="card image"
-            />
-            <img
-              className="absolute bottom-0 right-0 z-0 rounded-br-[12px]"
-              src="Image/RectangleBot.png"
-              alt="card image"
-            />
-            <div className="w-full">
-              <div className="flex justify-between mb-[56px]">
-                <p className="text-[13px] text-[#545454] font-medium z-10">
-                  BOOKINGS
-                </p>
-                <img src="Image/charm_menu-kebab.svg" alt="card image" />
-              </div>
-              <h1 className="text-[#002060] text-[40px] leading-[45px] font-bold">
-                1,283
-              </h1>
-              <div className="flex justify-between items-end w-full">
-                <p className=" text-[#F10A4B] text-[11px]">
-                  <img
-                    className="inline"
-                    src="image/down-arrow.svg"
-                    alt="card image"
-                  />{" "}
-                  -3.57%
-                </p>
-                <div className="bg-[#5D93FF] z-10 w-[33px] h-[32px] rounded-[5px] flex items-center justify-center">
-                  <img src="Image/Icon(2).svg" alt="card image" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white rounded-[12px] p-[16px] w-full min-w-[274px] min-h-[177px] relative shadow-md">
-            <img
-              className="absolute top-0 left-0 z-0 rounded-tl-[12px]"
-              src="Image/RectangleTop.svg"
-              alt="card image"
-            />
-            <img
-              className="absolute bottom-0 right-0 z-0 rounded-br-[12px]"
-              src="Image/RectangleBot.png"
-              alt="card image"
-            />
-            <div className="w-full">
-              <div className="flex justify-between mb-[56px]">
-                <p className="text-[13px] text-[#545454] font-medium z-10">
-                  Services
-                </p>
-                <img src="Image/charm_menu-kebab.svg" alt="card image" />
-              </div>
-              <h1 className="text-[#002060] text-[40px] leading-[45px] font-bold">
-                3,302
-              </h1>
-              <div className="flex justify-between items-end w-full">
-                <p className=" text-[#23D976] text-[11px]">
-                  <img
-                    className="inline"
-                    src="image/green-arrow.svg"
-                    alt="card image"
-                  />{" "}
-                  +29.08%
-                </p>
-                <div className="bg-[#FF7272] z-10 w-[33px] h-[32px] rounded-[5px] flex items-center justify-center">
-                  <img src="Image/Icon(3).svg" alt="card image" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white rounded-[12px] p-[16px] w-full min-w-[274px] min-h-[177px] relative shadow-md">
-            <img
-              className="absolute top-0 left-0 z-0 rounded-tl-[12px]"
-              src="Image/RectangleTop.svg"
-              alt="card image"
-            />
-            <img
-              className="absolute bottom-0 right-0 z-0 rounded-br-[12px]"
-              src="Image/RectangleBot.png"
-              alt="card image"
-            />
-            <div className="w-full">
-              <div className="flex justify-between mb-[56px]">
-                <p className="text-[13px] text-[#545454] font-medium z-10">
-                  WALLET
-                </p>
-                <img src="Image/charm_menu-kebab.svg" alt="card image" />
-              </div>
-              <h1 className="text-[#002060] text-[40px] leading-[45px] font-bold">
-                $101K
-              </h1>
-              <div className="flex justify-between items-end w-full">
-                <p className=" text-[#23D976] text-[11px] underline underline-offset-2">
-                  <img
-                    className="inline"
-                    src="image/green-arrow.svg"
-                    alt="card image"
-                  />{" "}
-                  +29.08%
-                </p>
-                <div className="bg-[#D86ECC] z-10 w-[33px] h-[32px] rounded-[5px] flex items-center justify-center">
-                  <img src="Image/Icon.svg" alt="card image" />
-                </div>
-              </div>
-            </div>
-          </div>
+          {cardData.map((card, index) => (
+            <TopCardsPopup key={index} card={card} />
+          ))}
         </div>
 
         <div className="flex items-center w-full gap-[12px] mt-[8px]">
