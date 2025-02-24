@@ -109,7 +109,8 @@ const TopCardsPopup = ({ card, DarkMode }) => {
             } ${card.title === "WALLET" && "underline underline-offset-2"}`}
           >
             {!(card.title === "WALLET") && card.percentage}
-            <img className="inline" src={card.icon} alt="card image" />
+
+            {card.icon}
             {card.title === "WALLET" && card.percentage}
           </p>
           <div

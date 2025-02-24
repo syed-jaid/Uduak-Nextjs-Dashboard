@@ -19,11 +19,11 @@ const BottomCard = ({
         <p
           className={`${
             DarkMode ? "text-[#F3F3F3]" : "text-[#545454]"
-          }  text-[12px] font-medium mt-[20px] mb-[30px]`}
+          }  text-[12px] font-medium mt-[27px] mb-[20px]`}
         >
           {title}
         </p>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-[42px]">
           <h2
             className={`text-[40px] leading-[40px] font-bold ${
               DarkMode ? "text-white" : "text-[#002060]"

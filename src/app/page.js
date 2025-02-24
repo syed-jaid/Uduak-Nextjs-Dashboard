@@ -11,7 +11,11 @@ const inter = Inter({ subsets: ["latin"] });
 const page = () => {
   const [DarkMode, setDarkMode] = useState(false);
   return (
-    <div className={`${DarkMode ? "bg-[#111131]" : ""} ${inter.className}`}>
+    <div
+      className={`${DarkMode ? "bg-[#111131]" : ""} ${
+        inter.className
+      } cursor-pointer`}
+    >
       <HeaderIndex {...{ DarkMode, setDarkMode }} />
       <HeaderNav {...{ DarkMode }} />
       <DashboardIndex {...{ DarkMode }} />
