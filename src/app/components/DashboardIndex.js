@@ -3,6 +3,7 @@ import TopCardsPopup from "./cards/TopcardsPopup";
 import BottomCard from "./cards/BottomCard";
 import { RiCalendar2Fill } from "react-icons/ri";
 import { FiArrowUpRight, FiArrowDownRight } from "react-icons/fi";
+import DateRangePicker from "./Calendar/DateRangePicker";
 
 const DashboardIndex = ({ DarkMode }) => {
   const TopCardData = [
@@ -154,26 +155,7 @@ const DashboardIndex = ({ DarkMode }) => {
               Here are the insights for today
             </p>
           </div>
-          <div className="flex justify-center items-center">
-            <div
-              className={`h-[40px] w-[214px] sm:flex justify-center items-center rounded-l-[8px] hidden ${
-                DarkMode
-                  ? "bg-[#111131] border border-1 border-[#262648]"
-                  : "bg-white"
-              }`}
-            >
-              <p
-                className={`text-[12px] font-medium ${
-                  DarkMode && "text-white"
-                }`}
-              >
-                01 Jan, 2024 to 31 Jan, 2024
-              </p>
-            </div>
-            <div className="bg-[#D961AB] text-white h-[38px] w-[35px] flex justify-center items-center rounded-l-[8px] sm:rounded-l-[0] rounded-r-[8px]">
-              <RiCalendar2Fill />
-            </div>
-          </div>
+          <DateRangePicker {...{ DarkMode }} />
         </div>
         {/* 4 in line  */}
         {DarkMode ? (

@@ -18,3 +18,61 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.dark {
+  background: #34346a !important;
+}
+
+.dark .rdrDateDisplayWrapper {
+  background: #34346a;
+}
+
+.dark .rdrDateInput {
+  background: #1d1d3f;
+}
+
+.rdrDateDisplayWrapper {
+  background: #000;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.dark .rdrCalendarWrapper {
+  background: #683c3c;
+}
+
+.dark .rdrWeekDay {
+  color: white !important;
+}
+
+.dark .rdrDay .rdrDayNumber span {
+  color: whitesmoke !important;
+}
+
+.dark .rdrDayPassive .rdrDayNumber span {
+  color: rgb(115, 115, 115) !important;
+}
+
+.dark .rdrMonthPicker {
+  background: #1d1d3f;
+}
+
+.dark .rdrMonthPicker select {
+  color: #ffffff !important;
+}
+
+.dark .rdrMonthPicker select option {
+  background: #34346a;
+}
+
+.dark .rdrYearPicker {
+  background: #1d1d3f !important;
+}
+
+.dark .rdrYearPicker select {
+  color: #ffffff !important;
+}
+
+.dark .rdrYearPicker select option {
+  background: #34346a;
+}
