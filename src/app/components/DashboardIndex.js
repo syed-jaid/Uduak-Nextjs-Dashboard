@@ -3,7 +3,7 @@ import TopCardsPopup from "./cards/TopcardsPopup";
 import BottomCard from "./cards/BottomCard";
 
 const DashboardIndex = ({ DarkMode }) => {
-  const cardData = [
+  const TopCardData = [
     {
       title: "TOTAL EARNINGS",
       value: "$28K",
@@ -13,6 +13,7 @@ const DashboardIndex = ({ DarkMode }) => {
       dropdownOptions: ["Add payment", "All payments"],
       iconBgColor: "#45B1E1",
       iconSrc: "Image/Icon(1).svg",
+      bg: "#FFFFFF",
     },
     {
       title: "BOOKINGS",
@@ -23,9 +24,10 @@ const DashboardIndex = ({ DarkMode }) => {
       dropdownOptions: ["Check in", "View all"],
       iconBgColor: "#5D93FF",
       iconSrc: "Image/Icon(2).svg",
+      bg: "#FFFFFF",
     },
     {
-      title: "Services",
+      title: "SERVICES",
       value: "3,302",
       percentage: "+29.08%",
       icon: "image/green-arrow.svg",
@@ -33,6 +35,7 @@ const DashboardIndex = ({ DarkMode }) => {
       dropdownOptions: ["Open orders", "View all"],
       iconBgColor: "#FF7272",
       iconSrc: "Image/Icon(3).svg",
+      bg: "#FFFFFF",
     },
     {
       title: "WALLET",
@@ -43,10 +46,66 @@ const DashboardIndex = ({ DarkMode }) => {
       dropdownOptions: ["Withdraw", "View"],
       iconBgColor: "#D86ECC",
       iconSrc: "Image/Icon.svg",
+      bg: "#FFFFFF",
     },
   ];
 
-  const cardsData = [
+  const TopCardData2 = [
+    {
+      title: "TOTAL EARNINGS",
+      value: "$28K",
+      percentage: "+16.24%",
+      icon: "image/green-arrow.svg",
+      color: "#04D362",
+      dropdownOptions: ["Add payment", "All payments"],
+      iconBgColor: "#000000",
+      iconSrc: "Image/Icon(1).svg",
+      topSrc: "Image/bgBlackTop.png",
+      bottomSrc: "Image/bgBlackBottom.png",
+      bg: "#000000",
+    },
+    {
+      title: "BOOKINGS",
+      value: "1,283",
+      percentage: "-3.57%",
+      icon: "image/down-arrow.svg",
+      color: "#002060",
+      dropdownOptions: ["Check in", "View all"],
+      iconBgColor: "#5D93FF",
+      iconSrc: "Image/Icon(2).svg",
+      topSrc: "Image/bgBlueTop.png",
+      bottomSrc: "Image/bgBlueBottom.png",
+      bg: "#002060",
+    },
+    {
+      title: "SERVICES",
+      value: "3,302",
+      percentage: "+29.08%",
+      icon: "image/green-arrow.svg",
+      color: "#04D362",
+      dropdownOptions: ["Open orders", "View all"],
+      iconBgColor: "#830352",
+      iconSrc: "Image/Icon(3).svg",
+      topSrc: "Image/bgRedTop.png",
+      bottomSrc: "Image/bgRedBottom.png",
+      bg: "#830352",
+    },
+    {
+      title: "WALLET",
+      value: "$101K",
+      percentage: "+29.08%",
+      icon: "image/green-arrow.svg",
+      color: "#04D362",
+      dropdownOptions: ["Withdraw", "View"],
+      iconBgColor: "#04360A",
+      iconSrc: "Image/Icon.svg",
+      topSrc: "Image/bgGreenTop.png",
+      bottomSrc: "Image/bgGreenBottom.png",
+      bg: "#04360A",
+    },
+  ];
+
+  const BottomCardsData = [
     {
       image: "Image/card-e.svg",
       title: "OPEN DINING ORDERS",
@@ -115,16 +174,24 @@ const DashboardIndex = ({ DarkMode }) => {
           </div>
         </div>
         {/* 4 in line  */}
-        <div className="flex items-center justify-between gap-[12px] overflow-x-auto pb-[16px]">
-          {cardData.map((card, index) => (
-            <TopCardsPopup key={index} card={card} DarkMode={DarkMode} />
-          ))}
-        </div>
+        {DarkMode ? (
+          <div className="flex items-center justify-between gap-[12px] overflow-x-auto pb-[16px]">
+            {TopCardData2.map((card, index) => (
+              <TopCardsPopup key={index} card={card} DarkMode={DarkMode} />
+            ))}
+          </div>
+        ) : (
+          <div className="flex items-center justify-between gap-[12px] overflow-x-auto pb-[16px]">
+            {TopCardData.map((card, index) => (
+              <TopCardsPopup key={index} card={card} DarkMode={DarkMode} />
+            ))}
+          </div>
+        )}
 
         <div className="block lg:flex items-center w-full gap-[12px] mt-[8px]">
           {/* 2 by 2  */}
           <div className="lg:grid grid-cols-2 gap-[12px] w-full flex items-center justify-between overflow-x-auto pb-[16px] lg:pb-[0px]">
-            {cardsData.map((card, index) => (
+            {BottomCardsData.map((card, index) => (
               <BottomCard key={index} {...card} DarkMode={DarkMode} />
             ))}
           </div>

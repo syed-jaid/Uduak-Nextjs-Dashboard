@@ -140,8 +140,8 @@ const CalendarIndex = ({ DarkMode }) => {
                   dayObj.day === 2 &&
                   dayObj.currentMonth &&
                   ` ${
-                    DarkMode ? "bg-[#515231]" : "bg-[#d6f9c3]"
-                  } bg-[#fafbc1] border border-1 border-[#BDC007]`
+                    DarkMode ? "bg-[#515231]" : "bg-[#fafbc1]"
+                  }  border border-1 border-[#BDC007]`
                 }
                 ${
                   dayObj.day === 24 &&
