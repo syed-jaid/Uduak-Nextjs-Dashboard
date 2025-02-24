@@ -1,7 +1,6 @@
 import CalendarIndex from "./Calendar/CalendarIndex";
 import TopCardsPopup from "./cards/TopcardsPopup";
 import BottomCard from "./cards/BottomCard";
-import { RiCalendar2Fill } from "react-icons/ri";
 import { FiArrowUpRight, FiArrowDownRight } from "react-icons/fi";
 import DateRangePicker from "./Calendar/DateRangePicker";
 
@@ -58,7 +57,7 @@ const DashboardIndex = ({ DarkMode }) => {
       title: "TOTAL EARNINGS",
       value: "$28K",
       percentage: "+16.24%",
-      icon: "image/green-arrow.svg",
+      icon: <FiArrowUpRight className="inline text-[17px]" />,
       color: "#04D362",
       dropdownOptions: ["Add payment", "All payments"],
       iconBgColor: "#000000",
@@ -71,7 +70,7 @@ const DashboardIndex = ({ DarkMode }) => {
       title: "BOOKINGS",
       value: "1,283",
       percentage: "-3.57%",
-      icon: "image/down-arrow.svg",
+      icon: <FiArrowDownRight className="inline text-[17px]" />,
       color: "#002060",
       dropdownOptions: ["Check in", "View all"],
       iconBgColor: "#5D93FF",
@@ -84,7 +83,7 @@ const DashboardIndex = ({ DarkMode }) => {
       title: "SERVICES",
       value: "3,302",
       percentage: "+29.08%",
-      icon: "image/green-arrow.svg",
+      icon: <FiArrowUpRight className="inline text-[17px]" />,
       color: "#04D362",
       dropdownOptions: ["Open orders", "View all"],
       iconBgColor: "#830352",
@@ -97,7 +96,7 @@ const DashboardIndex = ({ DarkMode }) => {
       title: "WALLET",
       value: "$101K",
       percentage: "+29.08%",
-      icon: "image/green-arrow.svg",
+      icon: <FiArrowUpRight className="inline text-[17px]" />,
       color: "#04D362",
       dropdownOptions: ["Withdraw", "View"],
       iconBgColor: "#04360A",
