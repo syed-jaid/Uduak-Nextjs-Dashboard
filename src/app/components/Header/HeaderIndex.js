@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MdLightMode } from "react-icons/md";
 import MobileDrawer from "../MobileDrawer";
 
 const HeaderIndex = ({ DarkMode, setDarkMode }) => {
@@ -20,11 +21,18 @@ const HeaderIndex = ({ DarkMode, setDarkMode }) => {
             <img src="Image/LogoMobile.svg" alt="" />
           </div>
           <div className="flex justify-between items-center cursor-pointer">
-            <img
-              onClick={() => setDarkMode(!DarkMode)}
-              src="Image/dark-mode.svg"
-              alt=""
-            />
+            {DarkMode ? (
+              <MdLightMode
+                onClick={() => setDarkMode(!DarkMode)}
+                className="text-[25px] text-white"
+              />
+            ) : (
+              <img
+                onClick={() => setDarkMode(!DarkMode)}
+                src="Image/dark-mode.svg"
+                alt=""
+              />
+            )}
             <div className="px-[8px] sm:px-[15px] py-[10px] bg-[#002673] rounded-[8px] flex justify-between items-center ml-[14px] px[12px] py-[7px] ">
               <img
                 className="mr-[9px] sm:mr-[0px]"
