@@ -1,6 +1,7 @@
 import CalendarIndex from "./Calendar/CalendarIndex";
 import TopCardsPopup from "./cards/TopcardsPopup";
 import BottomCard from "./cards/BottomCard";
+import { RiCalendar2Fill } from "react-icons/ri";
 
 const DashboardIndex = ({ DarkMode }) => {
   const TopCardData = [
@@ -168,8 +169,8 @@ const DashboardIndex = ({ DarkMode }) => {
                 01 Jan, 2024 to 31 Jan, 2024
               </p>
             </div>
-            <div className="bg-[#D961AB] h-[38px] w-[35px] flex justify-center items-center rounded-l-[8px] sm:rounded-l-[0] rounded-r-[8px]">
-              <img src="image/calender.svg" alt="card image" />
+            <div className="bg-[#D961AB] text-white h-[38px] w-[35px] flex justify-center items-center rounded-l-[8px] sm:rounded-l-[0] rounded-r-[8px]">
+              <RiCalendar2Fill />
             </div>
           </div>
         </div>
