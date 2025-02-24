@@ -10,11 +10,15 @@ const Dropdown = ({ item, DarkMode }) => {
     >
       <div
         onClick={() => setDropdown(!dropdown)}
-        className="flex justify-between items-center cursor-pointer px-[24px] py-[10px]"
+        className="flex justify-between items-center cursor-pointer px-[24px] py-[14px]"
       >
         <div className="flex justify-start items-center cursor-pointer">
-          <img src={item.icon} alt=" card image" />
-          <p className="ml-[10px] text-[12px] text-nowrap text-[#495057]">
+          <img className="text-[#495057]" src={item.icon} alt=" card image" />
+          <p
+            className={`ml-[10px] text-[12px] text-nowrap ${
+              DarkMode ? "text-[#F7EDED]" : "text-[#9599AD]"
+            } `}
+          >
             {item.label}
           </p>
         </div>
@@ -25,9 +29,9 @@ const Dropdown = ({ item, DarkMode }) => {
           {item?.dropdown.map((option, index) => (
             <div
               key={index}
-              className={`overflow-hidden transition-all duration-300 px-[24px] py-[10px] text-[12px] text-nowrap text-[#9599AD] ${
-                dropdown ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-              }`}
+              className={`overflow-hidden transition-all duration-300 px-[24px] py-[10px] text-[12px] text-nowrap ${
+                DarkMode ? "text-[#F7EDED]" : "text-[#9599AD]"
+              } ${dropdown ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}`}
             >
               <p>{option}</p>
             </div>
