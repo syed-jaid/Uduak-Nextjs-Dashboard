@@ -84,19 +84,29 @@ export default function MobileDrawer({ open, setOpen, DarkMode }) {
               >
                 <div
                   onClick={() => setOpen(false)}
-                  className={`w-[25px] h-[25px] rounded-full bg-[#E9E9E9] flex justify-center items-center absolute right-[19px] top-[24px] cursor-pointer`}
+                  className={`${
+                    DarkMode ? "bg-[#B63B3B]" : "bg-[#E9E9E9]"
+                  } w-[25px] h-[25px] rounded-full flex justify-center items-center absolute right-[19px] top-[24px] cursor-pointer`}
                 >
-                  <img src="image/closeBtn.svg" alt="" />
+                  {DarkMode ? (
+                    <img src="image/closeWhite.svg" alt="" />
+                  ) : (
+                    <img src="image/closeBtn.svg" alt="" />
+                  )}
                 </div>
                 <div>
-                  <div className="flex justify-start items-center cursor-pointer px-[24px] py-[10px] border-b border-1 border-[#f2f2f2]">
+                  <div
+                    className={`${
+                      DarkMode ? "border-[#4d4d4d]" : "border-[#f2f2f2]"
+                    } flex justify-start items-center cursor-pointer px-[24px] py-[10px] border-b border-1 `}
+                  >
                     <img src="Image/Dashboards.svg" alt=" card image" />
                     <p className="ml-[10px] text-[12px] text-nowrap text-[#0070C0]">
                       Dashboards
                     </p>
                   </div>
                   {menuItems?.map((item, index) => (
-                    <Dropdown key={index} {...{ item }} />
+                    <Dropdown key={index} {...{ item, DarkMode }} />
                   ))}
                 </div>
               </div>
