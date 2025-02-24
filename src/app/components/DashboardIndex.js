@@ -1,7 +1,6 @@
 import CalendarIndex from "./Calendar/CalendarIndex";
 import TopCardsPopup from "./cards/TopcardsPopup";
 import BottomCard from "./cards/BottomCard";
-import { RiCalendar2Fill } from "react-icons/ri";
 import { FiArrowUpRight, FiArrowDownRight } from "react-icons/fi";
 import DateRangePicker from "./Calendar/DateRangePicker";
 
