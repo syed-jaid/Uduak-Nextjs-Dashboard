@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 
-const Dropdown = ({ item }) => {
+const Dropdown = ({ item, DarkMode }) => {
   const [dropdown, setDropdown] = useState(false);
   return (
-    <div className="border-b border-1 border-[#f2f2f2]">
+    <div
+      className={`border-b border-1 ${
+        DarkMode ? " border-[#4d4d4d]" : "border-[#f2f2f2]"
+      } `}
+    >
       <div
         onClick={() => setDropdown(!dropdown)}
         className="flex justify-between items-center cursor-pointer px-[24px] py-[10px]"
